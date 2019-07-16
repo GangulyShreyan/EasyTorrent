@@ -26,5 +26,6 @@ soup=bs4.BeautifulSoup(res.text, 'lxml')
 for link in soup.find_all('a', href=True):
      if(link['href'][0]=='h') and (link['href'][12:16]!='bing'):
         webbrowser.open(link['href'])
+        print(link['href'])
         break
         
