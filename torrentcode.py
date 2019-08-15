@@ -24,7 +24,7 @@ res=requests.get(link)
 soup=bs4.BeautifulSoup(res.text, 'lxml')
 
 for link in soup.find_all('a', href=True):
-     if(link['href'][0]=='h') and (link['href'][12:16]!='bing'):
+     if(link['href'][0]=='h') and (link['href'][12:16]!='bing') and (link['href'][7:0]!='go'):
         webbrowser.open(link['href'])
         print("Your torrent link is:", link['href'])
         break
